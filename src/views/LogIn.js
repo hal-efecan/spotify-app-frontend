@@ -3,14 +3,17 @@ import React, { useEffect } from 'react';
 function LogIn() {
 
     function handleServerRedirect() {
-        // window.location.href = `http://localhost:8888/login`
-        // window.location.href  = `https://pure-taiga-22805.herokuapp.com/login`
-        window.location.href = `https://hidden-depths-47482.herokuapp.com/login`
+        let backend_uri = process.env.BACKEND_URI
+        if(process.env.NODE_ENV !== 'production') {
+            window.location.href  = `http://localhost:8888/login`
+        } else {
+            window.location.href  = backend_uri 
+        }
       }
       
-      useEffect(() => {
-        handleServerRedirect()
-      },[])
+    useEffect(() => {
+      handleServerRedirect()
+    },[])
 
     return (
             <div className="LogIn">

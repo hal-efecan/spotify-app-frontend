@@ -9,6 +9,7 @@ import { ArtistsItemContext } from '../contexts/artistsItem/artistsItemContext';
 import { TracksItemContext } from '../contexts/tracksItem/tracksItemContext';
 import TracksHeader from "../components/tracks/TracksHeader";
 import ArtistsHeader from "../components/artists/ArtistsHeader";
+import { getBackendUri } from '../helpers/helperFunctions';
 
 function Profile() {
 
@@ -16,15 +17,17 @@ function Profile() {
   const [ , setTracksRoute ] = useContext(TracksItemContext)
 
   useEffect(() => {
+    let [ backend_uri ] = getBackendUri()
+  
     const artistsRouteLocation = () => {
-        if(window.location.href=== `https://spotify-application.herokuapp.com/artists`) {
+        if(window.location.href=== `${backend_uri}/artists`) {
             setArtistsRoute(true)
         } else {
           setArtistsRoute(false)
         }
     }
     const tracksRouteLocation = () => {
-      if(window.location.href=== `https://spotify-application.herokuapp.com/tracks`) {
+      if(window.location.href=== `${backend_uri}/tracks`) {
           setTracksRoute(true)
       } else {
         setTracksRoute(false)
@@ -33,7 +36,7 @@ function Profile() {
     artistsRouteLocation()
     tracksRouteLocation()
   },[setArtistsRoute, setTracksRoute])
-  console.log('test')
+
   return (
             <div>
 
