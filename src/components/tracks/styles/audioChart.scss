@@ -1,0 +1,20 @@
+.audioChartCanvas {
+    position: relative;
+    height: 475px;
+    width: 800px;
+    background-color: transparent; 
+    color: white;
+    margin: 0 auto; 
+    padding: 0;
+
+    @media (max-width: 768px) {
+        height: 275px;
+        width: 700px;
+        margin-bottom: 200px;
+    }
+    @media (max-width: 375px) {
+        // height: 500px;
+        // width: 350px;
+        display: none;
+    }
+}

@@ -1,0 +1,36 @@
+.search-form__header {
+    color: lightGreen;
+    font-size: 3.75rem;
+    width: 400px;
+    padding: 0;
+    margin: 0;
+
+    @media (max-width: 375px) {
+        font-size: 2rem;
+        width: 375px;
+    }
+}
+
+.search-form__input {
+    width: 400px;
+    margin-right: 10px;
+    height: 25px;
+    border-bottom: 1px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    caret-color: lightgreen;
+    color: white;
+    transition: 100ms;
+
+    &:focus {
+        box-shadow: 0px 1.5px 0px 0px white;
+    }
+}
+
+.search-form__input-button-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}

@@ -1,0 +1,130 @@
+// .nav {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 255px;
+//     background-color: rgb(34, 34, 34);
+//     border-right: 4px solid rgb(255, 255, 255);
+// }
+
+.main__recent-view {
+    margin-left: 255px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 768px) {
+        margin-left: 0px;
+    }
+}
+
+.recent-tracks {
+    color: lightGreen;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    padding: 0;
+    margin: 0 0 0 15px;
+}
+
+.recent-list {
+    list-style-type: none;
+    padding:0;
+    margin: 0;
+}
+
+///////////////////////////////////////////////////
+
+.recentView-trackItem {
+    text-decoration: none;
+    padding: 0;
+    margin: 0 auto 2.5px auto;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    color: white;
+    // background-color: lightcoral;
+
+    &:hover {
+        color: lightGrey;
+        background-color: #363636d3;
+        box-shadow: 0px 0px 3px 0px #00ff556e;
+        transition: 175ms;
+    }
+}
+
+.recentView-trackImage {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    cursor: PointerEvent;
+    padding: 0;
+    margin: 0 50px 0 5px;
+
+    @media (max-width: 768px) {
+        margin: 0 50px 0 5px;
+    }
+    @media (max-width: 768px) {
+        margin: 0 25px 0 5px;
+    }
+}
+
+.recentView-trackItem__textStyle {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 0;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    width: 90%;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+}
+
+.recentView-trackItem__track-name {
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0; 
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+    }
+    @media (max-width: 375px) {
+        font-size: 0.75rem;
+    }
+}
+
+.recentView-trackItem__album-name {
+    padding: 0; 
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: lightblue;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+    }
+    @media (max-width: 375px) {
+        font-size: 0.75rem;
+    }
+}
+
+.recentView-trackDuration {
+    padding: 0; 
+    margin: 0 10px 0 0;
+    font-weight: 400;
+    font-size: 0.95rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+    }
+    @media (max-width: 375px) {
+        font-size: 0.75rem;
+    }
+}

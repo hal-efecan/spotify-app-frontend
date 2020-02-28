@@ -1,0 +1,150 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    margin-left: 255px;
+    // background-color: lightpink;
+
+    @media (max-width: 768px) {
+        margin: 0 0 0 0;
+        // background-color: lightpink;
+    }
+    @media (max-width: 375px) {
+        margin: 0 0 0 0;
+        // background-color: lightpink;
+    }
+}
+
+.search-container  {
+    border-bottom: 3px solid lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    padding: 0;
+    margin: 0;
+    // background-color: orangered;
+
+    @media (max-width: 768px) {
+        height: 30vh;
+        font-size: 2rem;
+        // background-color: orangered;
+    }
+
+    @media (max-width: 375px) {
+        height: 30vh;
+        // background-color: orangered;
+    }
+}
+
+.serch-render__results {
+    padding: 0;
+    margin: 0;
+    // background-color: lightblue;
+
+    @media (max-width: 768px) {
+        // background-color: lightblue;
+    }
+    @media (max-width: 375px) {
+        // background-color: lightblue;
+    }
+}
+
+.searchView-searchItem {
+    text-decoration: none;
+    padding: 0;
+    margin: 10px auto 7px auto;
+    height: 75px;
+    display: flex;
+    // background-color: lightgrey;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    width: 95%;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
+    @media (max-width: 375px) {
+        width: 90%;
+    }
+
+    &:hover {
+        color: lightGrey;
+        background-color: #363636d3;
+        box-shadow: 0px 0px 3px 0px #00ff556e;
+        transition: 175ms;
+    }
+}
+
+.searchView-searchItem__text-style {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 0;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    width: 50%;
+
+    @media (max-width: 768px) {
+        width: 50%;
+    }
+    @media (max-width: 375px) {
+        width: 50%;
+    }
+}
+
+.search-view__artists-image {
+    max-width: 65px;
+    max-height: 65px;
+    border-radius: 50%;
+    cursor: PointerEvent;
+    padding: 0;
+    font-size: 11px;
+    margin: 0 50px 0 5px;
+
+    @media (max-width: 768px) {
+        width: 55px;
+        height: 55px;
+        margin: 0 50px 0 5px;
+    }
+
+    @media (max-width: 375px) {
+        width: 55px;
+        height: 55px;
+        margin: 0 25px 0 5px;
+    }
+}
+
+.searchView-artistItem__artist-name {
+    font-size: 0.95rem;
+    margin: 0;
+    padding: 0; 
+    font-weight: 400;
+    align-items: flex-start;
+    text-align: start;
+
+    @media (max-width: 768px) {
+        font-size: 0.85rem;
+    }
+    @media (max-width: 375px) {
+        font-size: 0.75rem;
+        text-align: start;
+    }
+}
+
+.search-view__button {
+    background-color: rgb(128, 134, 134);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+    width: 100px;
+    height: 25px;
+    border-bottom: none;
+    border: 1px solid grey;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
