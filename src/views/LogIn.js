@@ -5,7 +5,7 @@ function LogIn() {
     function handleServerRedirect() {
         // window.location.href = `http://localhost:8888/login`
         // window.location.href  = `https://pure-taiga-22805.herokuapp.com/login`
-        window.location.href = `https://powerful-depths-31730.herokuapp.com/login`
+        window.location.href = `https://hidden-depths-47482.herokuapp.com/login`
       }
       
       useEffect(() => {
