@@ -128,7 +128,9 @@ function UserSummary() {
     }, [userInfo.userId, accessToken])
 
     return (
-        userInfo.loading && following.loading && playlists.loading ? <Loading /> :
+        userInfo.loading && following.loading && playlists.loading ? setTimeout(() => {
+        <Loading />
+    }, 2000) :
 
             <div className='user-summary__container'>
 
