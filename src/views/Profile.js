@@ -17,7 +17,7 @@ function Profile() {
   const [ , setTracksRoute ] = useContext(TracksItemContext)
 
   useEffect(() => {
-    let backend_uri = `https://hidden-depths-47482.herokuapp.com/login`
+    let backend_uri = `https://hidden-depths-47482.herokuapp.com`
     // let [ backend_uri ] = getBackendUri()
     // console.log(backend_uri)
     const artistsRouteLocation = () => {
