@@ -9,7 +9,7 @@ import { ArtistsItemContext } from '../contexts/artistsItem/artistsItemContext';
 import { TracksItemContext } from '../contexts/tracksItem/tracksItemContext';
 import TracksHeader from "../components/tracks/TracksHeader";
 import ArtistsHeader from "../components/artists/ArtistsHeader";
-import { getBackendUri } from '../helpers/helperFunctions';
+// import { getBackendUri } from '../helpers/helperFunctions';
 
 function Profile() {
 
@@ -17,8 +17,9 @@ function Profile() {
   const [ , setTracksRoute ] = useContext(TracksItemContext)
 
   useEffect(() => {
-    let [ backend_uri ] = getBackendUri()
-  
+    let backend_uri = `https://hidden-depths-47482.herokuapp.com/login`
+    // let [ backend_uri ] = getBackendUri()
+    // console.log(backend_uri)
     const artistsRouteLocation = () => {
         if(window.location.href=== `${backend_uri}/artists`) {
             setArtistsRoute(true)

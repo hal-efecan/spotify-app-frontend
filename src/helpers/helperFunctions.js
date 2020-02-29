@@ -58,12 +58,12 @@ export const formatNum = (number) => {
     }
 }
 
-export const getBackendUri = () => {
-    let backend_uri = process.env.BACKEND_URI
-    if(process.env.NODE_ENV !== 'production') {
-        backend_uri = `http://localhost:8888/artists`
-    } else {
-        backend_uri = process.env.BACKEND_URI
-    }
-    return [backend_uri]
-}
+// export const getBackendUri = () => {
+//     let backend_uri = process.env.BACKEND_URI
+//     if(process.env.NODE_ENV !== 'production') {
+//         backend_uri = `http://localhost:8888/artists`
+//     } else {
+//         backend_uri = process.env.BACKEND_URI
+//     }
+//     return [backend_uri]
+// }
