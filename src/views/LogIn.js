@@ -3,15 +3,18 @@ import React, { useEffect } from 'react';
 function LogIn() {
 
     function handleServerRedirect() {
-        // let backend_uri = process.env.BACKEND_URI
-        window.location.href = `https://hidden-depths-47482.herokuapp.com/login`
-        // if(process.env.NODE_ENV !== 'production') {
-        //   // window.location.href = `https://hidden-depths-47482.herokuapp.com/login`
-        //     window.location.href  = `http://localhost:8888/login`
-        // } else {
-        //     // window.location.href  = backend_uri 
-        //     window.location.href = `https://hidden-depths-47482.herokuapp.com/login`
-        // }
+
+        const returnEnv = (env) => {
+          switch(env) {
+            case 'dev':
+              return `http://localhost:8888/login`;
+            case 'prod':
+              return `https://hidden-depths-47482.herokuapp.com/login`;
+            default:
+              return
+          }
+        }
+        window.location.href = returnEnv('prod')
       }
       
     useEffect(() => {

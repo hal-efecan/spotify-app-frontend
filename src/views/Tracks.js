@@ -12,7 +12,7 @@ function Tracks() {
 
     useEffect(() => {
         const tracksRouteLocation = () => {
-            if(window.location.href=== `https://spotify-application.herokuapp.com/tracks`) {
+            if(window.location.href=== `https://spotify-application.herokuapp.com/tracks`|| `http://localhost:3000/tracks`) {
                 setTracksRoute(true)
             } else {
                 setTracksRoute(false)

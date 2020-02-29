@@ -9,11 +9,11 @@ import ArtistsHeader from '../components/artists/ArtistsHeader';
 
 function Artists() {
 
-    const [ , setRoute ] = useContext(ArtistsItemContext)
+    const [ route, setRoute ] = useContext(ArtistsItemContext)
 
     useEffect(() => {
         const artistsRouteLocation = () => {
-            if(window.location.href=== `https://spotify-application.herokuapp.com/artists`) {
+            if(window.location.href=== `https://spotify-application.herokuapp.com/artists` || `http://localhost:3000/artists`) {
                 setRoute(true)
             } else {
                 setRoute(false)

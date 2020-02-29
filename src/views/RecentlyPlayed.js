@@ -4,11 +4,15 @@ import RecentItem from '../components/recent/RecentItem';
 import { tokenContext } from '../contexts/token/tokenContext';
 import '../views/views-scss/recent.view.scss';
 import { headers } from '../helpers/helperFunctions';
+import Loading from '../components/loading/Loading';
 
 function RecentlyPlayed() {
 
     const [ accessToken ] = useContext(tokenContext)
-    const [ recentTracks, setRecentTracks ] = useState([])
+    const [ recentTracks, setRecentTracks ] = useState({
+      loading: true,
+      recent: []
+    })
 
     useEffect(() => {
         async function fetchRecentTracks() {
@@ -16,12 +20,15 @@ function RecentlyPlayed() {
             const apiUrl = 'https://api.spotify.com/v1/me/player/recently-played?type=track';
             const response = await fetch(apiUrl, headers('GET', accessToken))
             const data = await response.json()
-              setRecentTracks(data.items);
+              setRecentTracks({
+                loading: false,
+                recent: data.items
+              });
           } catch(err) {
             console.log(err)
           }
         }
-        fetchRecentTracks();
+          fetchRecentTracks();
       }, [accessToken])
     
     return (
@@ -36,18 +43,20 @@ function RecentlyPlayed() {
             <h2 className='recent-tracks'>Recent Tracks</h2>
           </ul>
 
-            <div style={{ width: '95%', margin:'0 auto'}}>
-              <ul className='recent-list'>
-                { recentTracks && recentTracks.map((track, index) => {
+            { recentTracks.loading ? <Loading /> :
+              <div style={{ width: '95%', margin:'0 auto'}}>
+                <ul className='recent-list'>
+                  { recentTracks.recent.map((track, index) => {
 
-                  const img = track.track.album.images[0];
-                  const imgUrl = img ? img.url : "http://placekitten.com/g/200/300";
+                    const img = track.track.album.images[0];
+                    const imgUrl = img ? img.url : "http://placekitten.com/g/200/300";
 
-                  return <RecentItem key={index} imgUrl={imgUrl} index={index} track={track} />
-                  })
-                }
-              </ul>
-            </div>
+                    return <RecentItem key={index} imgUrl={imgUrl} index={index} track={track} />
+                    })
+                  }
+                </ul>
+              </div>
+            }
 
           </div>
         </div>

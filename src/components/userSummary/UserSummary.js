@@ -38,13 +38,14 @@ function UserSummary() {
                 const response = await fetch(api, headers('GET', accessToken))
                 const data = await response.json()
                     console.log(data)
-                    setUserInfo({
-                        userId: data.id,
-                        displayName: data.display_name,
-                        userImage: data.images[0].url,
-                        userFollowers: data.followers.total,
-                        loading: false
-                    })
+                        setUserInfo({
+                            userId: data.id,
+                            displayName: data.display_name,
+                            userImage: data.images[0].url,
+                            userFollowers: data.followers.total,
+                            loading: false
+                        })
+                   
                     // After inital API call cache into local storage: display_name, user_image, followers & user_Id to local storage
                     setLocalDisplayName(data.display_name)
                     setLocalUserImage(data.images[0].url)
@@ -88,7 +89,7 @@ function UserSummary() {
         }
 
         if(!user_following || user_following === 'undefined') {
-            fetchUserFollowing()
+                fetchUserFollowing()
         } else {
             setFollowing({
                 total: user_following,
@@ -105,7 +106,6 @@ function UserSummary() {
                 const apiUrl = `https://api.spotify.com/v1/users/${userInfo.userId}/playlists`;
                 const response = await fetch(apiUrl, headers('GET', accessToken))
                 const data = await response.json()
-                console.log(data)
                     setPlaylists({
                         total: data.total,
                         loading: false
@@ -117,7 +117,9 @@ function UserSummary() {
         }
 
         if(!users_playlists || users_playlists === 'undefined') {
-            fetchUserPlaylists()
+            setTimeout(() => {
+                fetchUserPlaylists()
+            }, 500)
         } else {
             setPlaylists({
                 total: users_playlists,
@@ -128,10 +130,11 @@ function UserSummary() {
     }, [userInfo.userId, accessToken])
 
     return (
-        userInfo.loading && following.loading && playlists.loading ? setTimeout(() => {
-        <Loading />
-    }, 2000) :
-
+        userInfo.loading && following.loading && playlists.loading ? 
+        <div className="loading-container">
+            <Loading /> 
+        </div> :
+ 
             <div className='user-summary__container'>
 
                 <div className='user-summary__image-container'>

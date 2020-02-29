@@ -1,7 +1,18 @@
+.spinner-container {
+    height: 300px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    margin-left: 275px;
+    height: 100%;
+    margin: 0 0 0 0;
+}
+
 .spinner {
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
     background-color: transparent;
+    transform: translatex(-50%);
     border-radius: 50%;
     position: relative;
     box-sizing: border-box;
@@ -10,15 +21,15 @@
   .spinner:before {
     content: '';
     position: absolute;
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     background-color: transparent;
     border: 4px solid transparent;
-    border-top: 4px solid navy;
-    border-bottom: 4px solid navy;
+    border-top: 4px solid rgb(155, 197, 231);
+    border-bottom: 4px solid rgb(155, 197, 231);
     box-sizing: border-box;
-    animation: spin 500ms linear infinite
+    animation: spin 650ms cubic-bezier(.84,.3,.39,1.07) infinite;
   }
   
   @keyframes spin {

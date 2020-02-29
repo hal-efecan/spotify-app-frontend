@@ -1,12 +1,11 @@
 import React from 'react';
+import './styles/loader.scss';
 
 function Loading() {
     return (
-        <div style={{display: 'flex', justifyContent: 'center', alignContent: 'center', marginLeft: '275px'}}>
-            {/* <h1>Loading...</h1> */}
+        <div className='spinner-container'>
             <div className="spinner">
             </div>
-            
         </div>
     )
 }

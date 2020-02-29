@@ -10,7 +10,7 @@ function TokenProvider(props) {
 
     const refreshTokenFn = async () => {
         let refresh_token = window.localStorage.getItem('refresh_token')
-        const apiUrl = `https://pure-taiga-22805.herokuapp.com/refresh_token?refresh_token=${refresh_token}`
+        const apiUrl = `https://hidden-depths-47482.herokuapp.com/refresh_token?refresh_token=${refresh_token}`
         
         try {
             const response = await fetch(apiUrl, headers(refresh_token))

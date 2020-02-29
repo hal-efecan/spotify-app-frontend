@@ -136,11 +136,7 @@ function TrackId({ match }) {
       }
       fetchTrack()    
     }, [accessToken, match.params.id])
-    console.log(track)
-    console.log(album)
-    console.log(artists)
-    console.log(audioFeatures)
-    console.log(audioAnalysis)
+
     return (
         <div>
 
