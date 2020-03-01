@@ -1,8 +1,10 @@
 .container {
     width: 100%;
+    position: relative;
 }
 
 .nav {
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;

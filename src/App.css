@@ -1,11 +1,13 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   max-width: 1366px;
   margin: 0 auto 0 auto;
   background-color: rgb(34, 34, 34);
 }
+
 body {
   margin: 0;
   padding: 0;
