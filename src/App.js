@@ -31,7 +31,7 @@ return (
                   <ArtistsItemProvider>
                     <ArtistsProvider>
                     <TracksProvider>
-                        <div>
+                        {/* <div> */}
                           <Switch>
                             <Route exact path='/' render={() => <Profile />} />
                             <Route exact path='/search' render={() => <Search />} />
@@ -43,7 +43,7 @@ return (
                             <Route exact path='/recent' render={() => <RecentlyPlayed />} />
                             <Route path='/recent/:id' /*render={props => <RecentId {...props} />}*/ render={props => <TrackId {...props} />}  />
                           </Switch>
-                        </div>
+                        {/* </div> */}
                       </TracksProvider>
                     </ArtistsProvider>
                   </ArtistsItemProvider>
