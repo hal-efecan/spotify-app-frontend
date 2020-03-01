@@ -60,7 +60,7 @@ function Tracks() {
     }
       fetchTopTracks()
   }, [state.term, accessToken]);
-    console.log(topTracks.tracks)
+
     return (
 
         topTracks.loading ? <Loading /> :

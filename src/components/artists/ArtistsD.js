@@ -62,7 +62,7 @@ function ArtistsD() {
     }
       fetchArtistsToDisplay()
   }, [state.term, accessToken, topArtists.loading]);
-    console.log(topArtists.artists)
+
     return (
           topArtists.loading ? <Loading /> :
 
