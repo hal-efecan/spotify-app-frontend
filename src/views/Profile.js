@@ -49,7 +49,7 @@ function Profile() {
   },[setArtistsRoute, setTracksRoute])
 
   return (
-            <div>
+            <div className='container'>
               <div className='nav'>
                 <Navigation />
               </div>
